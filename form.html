@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link
+    href="https://fonts.googleapis.com/css?family=Roboto"
+    rel="stylesheet"
+    />
+    <link
+    href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=PT+Sans&display=swap"
+    rel="stylesheet"
+    />
+    <link href="../styles/style.css" rel="stylesheet" type="text/css">
+    <title>Форма для регистрации</title>
+</head>
+<body>
+    <main class="main">
+        <div class="wrapper">
+            <h1 class="wrapper__title">Давайте начнем!</h1>
+            <form class="registration-form">
+                <div class="registration-form__content">
+                    <label class="registration-form__label" for="name">Имя</label>
+                    <input class="registration-form__input" tabindex="0" type="text" id="name" name="name" placeholder="Иван">
+                </div>
+                <div class="registration-form__content">
+                    <label class="registration-form__label" for="surname">Фамилия</label>
+                    <input class="registration-form__input" tabindex="1" type="text" id="surname" name="surname" placeholder="Иванов">
+                </div>
+                <div class="registration-form__content">
+                    <label class="registration-form__label" for="email">Email</label>
+                    <input class="registration-form__input" tabindex="2" required type="email" id="email" name="email" placeholder="example@mail.com">
+                </div>
+                <div class="registration-form__content">
+                    <label class="registration-form__label" for="password">Пароль</label>
+                    <input class="registration-form__input-password" tabindex="3" type="password" id="password" name="password" placeholder="Пароль">
+                </div>
+                <div class="registration-form__radio">
+                    <span class="registration-form__gender-label">Ваш пол:</span>
+                    <div class="registration-form__gender-options">
+                        <label class="registration-form__gender-radio"><input type="radio" tabindex="4" name="gender" value="male"> Мужской</label>
+                        <label class="registration-form__gender-radio"><input type="radio" tabindex="5" name="gender" value="female"> Женский</label>
+                    </div>
+                </div>
+                <div class="registration-form__checkbox">
+                    <div class="registration-form__checkbox-group">
+                        <input class="registration-form__checkbox-input" tabindex="6" type="checkbox" id="agree" name="agree" required>
+                        <label class="registration-form__checkbox-label" tabindex="7" for="agree">Я принимаю условия Пользовательского соглашения и даю своё согласие на обработку моих персональных данных на условиях, определенных Политикой конфиденциальности.</label>
+                    </div>
+                </div>
+                <button type="submit" class="registration-form__button">Зарегистрироваться</button>
+            </form>
+        </div>
+    </main>
+</body>
