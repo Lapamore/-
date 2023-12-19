@@ -1,0 +1,176 @@
+   
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+    color: white;
+}
+
+.header {
+    background: #20232a;
+    color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+.header img {
+    height: 50px;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.navbar a {
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    transition: background-color 0.3s, border-radius 0.3s;
+    background-color: #20232a;
+    border-radius: 5px;
+    border: solid #20232a;
+}
+
+.navbar a:hover {
+    background: #6441a5;   
+}
+
+.navbar a:active {
+    background-color: #6441a5;
+    border: solid white;
+}
+
+
+.button {
+    padding: 10px 20px;
+    margin-left: 20px;
+    border: 2px solid #6441a5;
+    border-radius: 20px;
+    background: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.button:hover {
+    background-color: #6441a5;
+    color: white;
+}
+
+.section {
+    padding-top: 20px; /* Offset by header height */
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    background-size: cover;
+    background-position: center;
+}
+.sectionBlocks {
+    /* padding-top: 60px; Offset by header height */
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.section#home {
+    background: url('../images/bg_2.jpg') no-repeat center center/cover;
+}
+
+.section#aboutus {
+    background: url('../images/path-to-aboutus-bg.jpg') no-repeat center center/cover;
+}
+
+.block {
+    width: 30%;
+    height: 500px;
+    margin: 10px;
+    background-color: #444;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.block .details {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 100%; /* Hide details initially */
+    background: rgba(0, 0, 0, 0.7);
+    transition: top 0.3s;
+    padding: 20px;
+    box-sizing: border-box;
+    color: white;
+}
+
+.block:hover .details {
+    top: 0;
+}
+
+@media (max-width: 768px) {
+    .block {
+        width: 90%;
+    }
+}
+
+.sposobnosti {
+    margin-top: 70px;
+    font-size: 40px;
+    color: #000;
+    text-align: center;
+}
+
+.section h1, .section h2 {
+    color: #fff; /* White text */
+    margin-bottom: 0.5em;
+  }
+  
+.section h1 {
+    font-size: 3em; /* Larger font size for the main title */
+}
+
+footer {
+    background: #20232a;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+
+#quoteText {
+    color: white; /* Установите цвет текста на черный */
+    font-size: 2.5em; /* Увеличьте размер шрифта */
+    opacity: 0; /* start with quote invisible */
+    transition: opacity 2s; /* smooth transition for the opacity */
+}
+
+#home p {
+    font-size: 24px; /* Установите желаемый размер шрифта в пикселях */
+    position: relative;
+    top: -24px;
+}
+  
+.section#aboutus {
+/* Установите цвет фона для раздела aboutus */
+background-color: #030A1D; /* Например, зеленый цвет фона */
+}
+
+.section#pricing {
+    background-color: #030A1D;
+}
+
+.section#quotes {
+    background-color: #030A1D;
+}
+
