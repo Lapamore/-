@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Веб-заметки</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <nav class="navbar">
+          <a href="#home" class="current">Главная</a>
+        </nav>
+      </div>
+    <div id="app">
+        <h1>Веб-заметки</h1>
+        <div id="notes-container"></div>
+        <textarea id="note-input" placeholder="Введите вашу заметку"></textarea>
+        <button onclick="addNote()">Добавить заметку</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
