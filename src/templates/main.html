@@ -1,81 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Motivatry</title>
-    <link rel="stylesheet" href="../styles/style.css">
-</head>
-<body>
-  <div class="header">
-    <div class="logo">
-      <img src="../images/motivation.png" alt="Logo">
-      <a href=main.html class="title">Motivatry</a>
+    <link rel="stylesheet" href="../styles/style.css" />
+  </head>
+  <body>
+    <div class="header">
+      <div class="logo">
+        <img src="../images/motivation.png" alt="Logo" />
+        <a href="main.html" class="title">Motivatry</a>
+      </div>
+      <nav class="navbar">
+        <a href="#home">Главная</a>
+        <a href="#aboutus">Мы</a>
+        <a href="#courses">Возможности</a>
+        <a href="#widgets">Виджеты</a>
+        <a href="#quotes">Мотивация</a>
+        <a href="form.html">Личный кабинет</a>
+      </nav>
     </div>
-    <nav class="navbar">
-      <a href="#home">Главная</a>
-      <a href="#aboutus">Мы</a>
-      <a href="#courses">Возможности</a>
-      <a href="#pricing">Pass</a>
-      <a href="#pass">Pass</a>
-      <a href="#quotes">Мотивация</a>
-      <a href="form.html">Login</a>
-    </nav>
-  </div>
-
-  <div id="home" class="section">
-    <h1>Добро пожаловать в Motivatry</h1>
-    <p> Начните свой путь к успеху прямо сейчас!</p>
-  </div>
-
-  <div id="aboutus" class="section">
-    <h2>About Us</h2>
-    <p>Information about our organization and mission.</p>
-  </div>
-  <p class="sposobnosti">Возможности</p>
-  <div id="courses" class="sectionBlocks">
-    <div class="block">
-      <div class="details">Запишите свои мысли прямо сейчас и дайте своим идеям шанс расцвести!</div>
-    </div>
-    <div class="block">
-      <div class="details">Насладитесь нашими музыкальными подборками – от веселья до покоя, здесь есть что-то для каждого настроения!</div>
-    </div>
-    <div class="block">
-      <div class="details">Мы следим за вашими успехами, чтобы вы всегда оставались на верном пути.</div>
-    </div>
-  </div>
-
-  <div id="pricing" class="section">
-    <h2>Pricing</h2>
-    <p>Information on our pricing structure and offers.</p>
-  </div>
-
-  <div id="contact" class="section">
-    <h2>Contact Us</h2>
-    <p>How to get in touch with us.</p>
-  </div>
-
-  <div id="pass" class="section">
-      <h2>Contact Us</h2>
-      <p>How to get in touch with us.</p>
-  </div>
-
-  <div id="motivation" class="section">
-      <h2>Contact Us</h2>
-      <p>How to get in touch with us.</p>
-  </div>
-
-  <div id="quotes" class="section">
-      <p id="quoteText"></p> <!-- Placeholder for quotes -->
+    ы
+    <div id="home" class="section">
+      <h1>Добро пожаловать в Motivatry</h1>
+      <p>Начните свой путь к успеху прямо сейчас!</p>
     </div>
 
-    
-  <footer>
-      
-      <!-- Footer content here -->
-  </footer>
+    <div id="aboutus" class="section">
+      <div class="title-container">
+        <h2 class="title-prefix">НАШ</h2>
+        <h2 class="title-main">MOTIVATRY</h2>
+      </div>
+      <p>
+        Откройте перед собой увлекательный мир самоанализа. Наше приложение не
+        просто фиксирует ваши эмоции, но и помогает вам раскрывать их суть. Мы
+        предлагаем различные инструменты и аналитику, основанную на ваших личных
+        данных, чтобы вы могли глубже понять себя и свое внутреннее состояние
+      </p>
+      <a href="form.html" class="start">Начать</a>
+    </div>
 
-  <script src="../scripts/scripts.js"></script>
+    <div id="courses" class="opportunities">
+      <div class="sectionBlocks">
+        <div class="block block1">
+          <div class="details">
+            Насладитесь нашими музыкальными подборками – от веселья до покоя,
+            здесь есть что-то для каждого настроения!
+          </div>
+        </div>
+        <div class="block block2">
+          <div class="details">
+            Океан вдохновения: подборка вдохновляющих статей и книг для личного
+            роста
+          </div>
+        </div>
+        <div class="block block3">
+          <div class="details">
+            Мы следим за вашими успехами, чтобы вы всегда оставались на верном
+            пути.
+          </div>
+        </div>
+      </div>
+    </div>
 
-</body>
+    <div id="widgets" class="widgets-section">
+      <div class="widget" id="todoWidget">
+        <h3>Список дел</h3>
+        <p>Управляйте своими задачами эффективно</p>
+        <a href="../todo/index.html" class="widget-button">Перейти к списку дел</a>
+      </div>
+      <div class="widget" id="notesWidget">
+        <h3>Заметки</h3>
+        <p>Сохраняйте свои мысли и идеи в одном месте</p>
+        <a href="../note/index.html" class="widget-button">Перейти к заметкам</a>
+      </div>
+      <div class="widget" id="notesWidget">
+        <h3>Музыка</h3>
+        <p>Проникнитесь в дело под спокойный плейлист</p>
+        <a href="https://music.yandex.ru/users/Lostghost23/playlists/1004" class="widget-button">Слушать</a>
+      </div>
+  </div>
+     
+
+    <div id="quotes" class="section">
+      <p id="quoteText"></p>
+      <!-- Placeholder for quotes -->
+    </div>
+
+    <footer>
+      <p>2023 Motivatry. Все права защищены.</p>
+    </footer>
+
+    <script src="../scripts/scripts.js"></script>
+  </body>
 </html>

@@ -39,3 +39,4 @@ setTimeout(changeQuote, 6000); // Change quote every 6 seconds
 }
 
 window.onload = changeQuote;
+
