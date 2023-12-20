@@ -34,39 +34,57 @@
             <form class="registration-form">
                 <div class="registration-form__content">
                     <label class="registration-form__label" for="name">Имя</label>
-                    <input class="registration-form__input" tabindex="0" type="text" id="name" name="name" placeholder="Иван">
+                    <input class="registration-form__input" tabindex="0" type="text" id="name" name="name" pattern="[A-Za-zА-Яа-яЁё]+" placeholder="Иван">
+                    <span id="nameError" class="validation-error"></span>
                 </div>
                 <div class="registration-form__content">
                     <label class="registration-form__label" for="surname">Фамилия</label>
-                    <input class="registration-form__input" tabindex="1" type="text" id="surname" name="surname" placeholder="Иванов">
+                    <input class="registration-form__input" tabindex="1" type="text" id="surname" name="surname" pattern="[A-Za-zА-Яа-яЁё]+" placeholder="Иванов">
+                    <span id="surnameError" class="validation-error"></span>
                 </div>
                 <div class="registration-form__content">
                     <label class="registration-form__label" for="email">Email</label>
-                    <input class="registration-form__input" tabindex="2" required type="email" id="email" name="email" placeholder="example@mail.com">
+                    <input class="registration-form__input" tabindex="2" type="email" id="email" name="email" placeholder="example@mail.com">
+                    <span id="emailError" class="validation-error"></span>
                 </div>
                 <div class="registration-form__content">
                     <label class="registration-form__label" for="password">Пароль</label>
-                    <input class="registration-form__input-password" tabindex="3" type="password" id="password" name="password" placeholder="Пароль">
+                    <div class="password-container">
+                        <input class="registration-form__input-password" tabindex="3" type="password" id="password" name="password" placeholder="Пароль">
+                        <div class="eye-icon" onclick="togglePasswordVisibility()"></div>
+                        <span id="passwordError" class="validation-error"></span>
+                    </div>
                 </div>
-                <!-- <div class="registration-form__content">
-                    <label class="registration-form__label" for="password">Возраст</label>
-                    <input class="registration-form__input-password" tabindex="4" type="age" id="age" name="age" placeholder="Возраст">
-                </div> -->
+                <div class="registration-form__content">
+                    <label class="registration-form__label" for="password">Подтвердите пароль</label>
+                    <input class="registration-form__input-password" tabindex="3" type="password" id="confirm_password" name="confirm_password" placeholder="Подтвердите пароль">
+                    <span id="confirmPasswordError" class="validation-error"></span>                
+                </div>
+                <div class="age-container" oninput="checkAge()">
+                    <label class="text__style" for="age">Возраст</label>
+                    <input type="text" id="age" name="age" oninput="updateRangeValue()" size="3">
+                    <input type="range" id="ageRange" name="ageRange" min="1" max="100" value="1" oninput="updateAgeValue()">
+                    <span id="ageError" class="validation-error"></span>
+                </div>
                 <div class="registration-form__radio">
-                    <span class="registration-form__gender-label">Ваш пол:</span>
+                    <span class="registration-form__gender-label">Ваш пол</span>
                     <div class="registration-form__gender-options">
                         <label class="registration-form__gender-radio"><input type="radio" tabindex="5" name="gender" value="male"> Мужской</label>
                         <label class="registration-form__gender-radio"><input type="radio" tabindex="6" name="gender" value="female"> Женский</label>
+                        <span id="genderError" class="validation-error"></span>
                     </div>
                 </div>
                 <div class="registration-form__checkbox">
                     <div class="registration-form__checkbox-group">
-                        <input class="registration-form__checkbox-input" tabindex="7" type="checkbox" id="agree" name="agree" required>
-                        <label class="registration-form__checkbox-label" tabindex="8" for="agree">Я принимаю условия Пользовательского соглашения и даю своё согласие на обработку моих персональных данных на условиях, определенных Политикой конфиденциальности.</label>
+                        <input class="registration-form__checkbox-input" tabindex="7" type="checkbox" id="agreeTerms" name="agreeTerms">
+                        <label class="registration-form__checkbox-label" tabindex="8" for="agreeTerms">Я принимаю условия Пользовательского соглашения и даю своё согласие на обработку моих персональных данных на условиях, определенных Политикой конфиденциальности.</label>
                     </div>
+                    <span id="agreeTermsError" class="validation-error"></span>
                 </div>
-                <button type="submit" class="registration-form__button">Зарегистрироваться</button>
+                <button type="button" class="registration-form__button" onclick="register()">Зарегистрироваться</button>
+                <div id="validationErrors" class="validation-error"></div>
             </form>
         </div>
     </main>
+    <script src="../scripts/form-script.js"></script>
 </body>
