@@ -24,10 +24,7 @@ function checkAge() {
 
     // Проверка на отрицательный возраст
     if (parseInt(age) < 0) {
-        ageErrorMessage.innerText = "Введите положительное число для возраста";
-    } else {
-        // Сброс ошибки, если возраст введен корректно
-        ageErrorMessage.innerText = "";
+        displayValidationError("ageError", "Используйте только положительные числа.");
     }
 }
 
@@ -42,6 +39,7 @@ function updateRangeValue() {
 }
 
 function register() {
+    var c=0;
     var name = document.getElementById("name").value;
     var surname = document.getElementById("surname").value;
     var email = document.getElementById("email").value;
@@ -63,59 +61,76 @@ function register() {
     var agreeTermsCheckbox = document.getElementById("agreeTerms");
     if (!agreeTermsCheckbox.checked) {
         displayValidationError("agreeTermsError", "Необходимо согласиться с условиями пользовательского соглашения.");
-    } else {
-        clearValidationError("agreeTermsError");
+        c++;
     }
 
     if (name.trim() === "") {
         displayValidationError("nameError", "Не введено имя.");
+        c++;
     } else if (!/^[a-zA-Zа-яА-ЯёЁ]+$/.test(name.trim())) {
         displayValidationError("nameError", "Некорректное имя. Используйте только буквы.");
+        c++;
     }
 
     if (surname.trim() === "") {
         displayValidationError("surnameError", "Не введена фамилия.");
+        c++;
     } else if (!/^[a-zA-Zа-яА-ЯёЁ]+$/.test(surname.trim())) {
         displayValidationError("surnameError", "Некорректная фамилия. Используйте только буквы.");
+        c++;
     }
 
     if (password.trim() === "") {
         displayValidationError("passwordError", "Не введен пароль.");
+        c++;
     } else if (password.trim().length < 8) {
         displayValidationError("passwordError", "Пароль должен содержать не менее 8 символов.");
+        c++;
     }
 
     if (password !== confirmPassword) {
-        displayValidationError("confirmPasswordError","Пароли не совпадают")
+        displayValidationError("confirmPasswordError","Пароли не совпадают");
+        c++;
     }
 
     if (email.trim() === "") {
         displayValidationError("emailError", "Не введена почта.");
+        c++;
     } else if (!isValidEmail(email.trim())) {
         displayValidationError("emailError", "Некорректный формат email.");
-    }
+        c++;
+    } 
 
     if (age.trim() === "") {
         displayValidationError("ageError", "Не введен возраст.");
+        c++;
     } else if (!/^\d+$/.test(age.trim())) {
-        displayValidationError("ageError", "Некорректный возраст. Используйте только положительные числа.");
+        displayValidationError("ageError", "Некорректный возраст.");
+        c++;
     }
 
     if (!gender) {
         displayValidationError("genderError", "Не выбран пол.");
-    }
-
-    // Если есть замечания, не продолжаем регистрацию
-    var validationErrors = document.querySelectorAll(".validation-error");
-    if (validationErrors.length > 0) {
-        return;
+        c++;
     }
 
     // Проверка на соответствие паролей
     if (password !== confirmPassword) {
-        alert("Пароли не совпадают");
-        return;
+        displayValidationError("confirmPasswordError", "Пароли не совпадают.");
+        c++;   
     }
+
+    if (c > 0) {
+        return;
+    } 
+    saveUserToLocalStorage(name,surname,age,gender,email,password);
+
+    if (retrievedUser) {
+        console.log('Данные о пользователе:', retrievedUser);
+    } else {
+        console.log('Данных о пользователе нет в Local Storage');
+    }
+    window.location.href = 'cabinet.html'; 
 }
 
 function clearValidationErrors() {
@@ -133,4 +148,22 @@ function displayValidationError(elementId, message) {
 function clearValidationError(elementId) {
     var errorElement = document.getElementById(elementId);
     errorElement.innerText = "";
+}
+
+
+// Сохранение данных о пользователе в Local Storage
+function saveUserToLocalStorage(name,surname,age,gender,email,password) {
+    const userData = { name,surname,age,gender,email,password };
+    const userDataString = JSON.stringify(userData);
+    localStorage.setItem('userData', userDataString);
+  }
+  
+  // Получение данных о пользователе из Local Storage
+  function getUserFromLocalStorage() {
+    const userDataString = localStorage.getItem('userData');
+    if (userDataString) {
+      const userData = JSON.parse(userDataString);
+      return userData;
+    }
+    return null;
 }
