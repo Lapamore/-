@@ -82,11 +82,11 @@
 
 .wrapper__title {
     padding-top: 60px;
-    color: #262E73;
     font-family: 'PT Sans', sans-serif;
     font-size: 35px;
     font-weight: 700;
     margin-bottom: 16px;
+    color: #20232a;
 }
 
 .registration-form {
@@ -239,9 +239,9 @@
     height: 52px;
     border-radius: 5px;
     border: none;
-    background: #0BBBC6;
     box-shadow: 0 2px 4px 0 rgba(38 46 115 / 10%);
     margin-bottom: 92px;
+    background: #20232a;
 }
 
 .password-container {

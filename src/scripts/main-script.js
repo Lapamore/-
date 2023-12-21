@@ -40,3 +40,26 @@ setTimeout(changeQuote, 6000); // Change quote every 6 seconds
 
 window.onload = changeQuote;
 
+function changeLinkDirection(newHref) {
+  // Получаем элемент ссылки по идентификатору
+  const linkElement = document.getElementById('area');
+
+  // Проверяем, что элемент найден
+  if (linkElement) {
+    // Изменяем направление ссылки (атрибут href)
+    linkElement.href = newHref;
+    console.log(newHref);
+  } else {
+    console.error('Элемент ссылки не найден.');
+  }
+}
+
+function check_registration () {
+  if (getUserFromLocalStorage()) {
+    changeLinkDirection('area.html')
+    window.location.href = 'area.html';
+  } else {
+    changeLinkDirection('form.html')
+    window.location.href = 'form.html';
+  }
+}

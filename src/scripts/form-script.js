@@ -6,6 +6,7 @@ function changeLinkDirection(newHref) {
     if (linkElement) {
       // Изменяем направление ссылки (атрибут href)
       linkElement.href = newHref;
+      console.log(newHref);
     } else {
       console.error('Элемент ссылки не найден.');
     }
@@ -31,25 +32,25 @@ function isValidEmail(email) {
     return emailRegex.test(email);
 }
 
-function checkAge() {
-    var age = document.getElementById("age").value;
-    var ageErrorMessage = document.getElementById("ageErrorMessage");
+// function checkAge() {
+//     var age = document.getElementById("age").value;
+//     var ageErrorMessage = document.getElementById("ageErrorMessage");
 
-    // Проверка на отрицательный возраст
-    if (parseInt(age) < 0) {
-        displayValidationError("ageError", "Используйте только положительные числа.");
-    }
-}
 
-function updateAgeValue() {
-    var ageRangeValue = document.getElementById("ageRange").value;
-    document.getElementById("age").value = ageRangeValue;
-}
+//     if (parseInt(age) < 0) {
+//         displayValidationError("ageError", "Используйте только положительные числа.");
+//     }
+// }
+
+// function updateAgeValue() {
+//     var ageRangeValue = document.getElementById("ageRange").value;
+//     document.getElementById("age").value = ageRangeValue;
+// }
   
-function updateRangeValue() {
-    var ageValue = document.getElementById("age").value;
-    document.getElementById("ageRange").value = ageValue;
-}
+// function updateRangeValue() {
+//     var ageValue = document.getElementById("age").value;
+//     document.getElementById("ageRange").value = ageValue;
+// }
 
 function register() {
     var c=0;
@@ -58,7 +59,7 @@ function register() {
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;
     var confirmPassword = document.getElementById("confirm_password").value;
-    var age = document.getElementById("age").value;
+
 
     var genderElements = document.getElementsByName("gender");
     var gender;
@@ -114,13 +115,13 @@ function register() {
         c++;
     } 
 
-    if (age.trim() === "") {
-        displayValidationError("ageError", "Не введен возраст.");
-        c++;
-    } else if (!/^\d+$/.test(age.trim())) {
-        displayValidationError("ageError", "Некорректный возраст.");
-        c++;
-    }
+    // if (age.trim() === "") {
+    //     displayValidationError("ageError", "Не введен возраст.");
+    //     c++;
+    // } else if (!/^\d+$/.test(age.trim())) {
+    //     displayValidationError("ageError", "Некорректный возраст.");
+    //     c++;
+    // }
 
     if (!gender) {
         displayValidationError("genderError", "Не выбран пол.");
@@ -136,7 +137,7 @@ function register() {
     if (c > 0) {
         return;
     } 
-    saveUserToLocalStorage(name,surname,age,gender,email,password);
+    saveUserToLocalStorage(name,surname,gender,email,password);
 
     var retrievedUser=getUserFromLocalStorage;
 
@@ -145,8 +146,9 @@ function register() {
     } else {
         console.log('Данных о пользователе нет в Local Storage');
     }
-    changeLinkDirection('area.html');
-    window.location.href = 'area.html'; 
+    
+    window.location.href = 'area.html';
+    // window.location.href = 'area.html'; 
 }
 
 function clearValidationErrors() {

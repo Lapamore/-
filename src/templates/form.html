@@ -11,9 +11,11 @@
     rel="stylesheet"
     />
     <link href="../styles/form-style.css" rel="stylesheet" type="text/css">
+    
     <title>Форма для регистрации</title>
 </head>
 <body>
+    <a id="link" href="main.html"></a>
     <div class="header">
         <a class="logo" href="../templates/main.html">
             <img src="../images/motivation.png" alt="Logo" />
@@ -60,12 +62,12 @@
                     <input class="registration-form__input-password" tabindex="3" type="password" id="confirm_password" name="confirm_password" placeholder="Подтвердите пароль">
                     <span id="confirmPasswordError" class="validation-error"></span>                
                 </div>
-                <div class="age-container" oninput="checkAge()">
+                <!-- <div class="age-container">
                     <label class="text__style" for="age">Возраст</label>
                     <input type="text" id="age" name="age" oninput="updateRangeValue()" size="3">
                     <input type="range" id="ageRange" name="ageRange" min="1" max="100" value="1" oninput="updateAgeValue()">
                     <span id="ageError" class="validation-error"></span>
-                </div>
+                </div> -->
                 <div class="registration-form__radio">
                     <span class="registration-form__gender-label">Ваш пол</span>
                     <div class="registration-form__gender-options">

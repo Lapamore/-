@@ -9,3 +9,13 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("userEmail").innerText = retrievedUser.email;
     document.getElementById("userGender").innerText = retrievedUser.gender;
 });
+
+function deleteUserFromLocalStorage() {
+    if (typeof localStorage !== 'undefined') {
+      localStorage.removeItem('userData');
+      window.location.href="main.html"
+      console.log('Данные пользователя успешно удалены из localStorage.');
+    } else {
+      console.log('Ваш браузер не поддерживает localStorage.');
+    }
+  }
