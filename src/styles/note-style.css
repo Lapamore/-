@@ -5,9 +5,66 @@ body {
     background: #030a1d;
 }
 
+.header {
+    height: 83px;
+    background: #20232a;
+    color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+}
+
+.header img {
+    height: 50px;
+}
+
+.title {
+    color: white;
+    margin-left: 10px;
+    font-size: 25px;
+    font-weight:bold;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.navbar a {
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    transition: background-color 0.3s, border-radius 0.3s;
+    background-color: #20232a;
+    border-radius: 5px;
+    border: solid #20232a;
+}
+
+.navbar a:hover {
+    background: #6441a5;   
+}
+
+.navbar a:active {
+    background-color: #6441a5;
+    border: solid white;
+}
+
 #app {
     max-width: 600px;
-    margin: 50px auto;
+    margin: 200px auto;
     padding: 20px;
     background-color: rgba(255, 255, 255, 0.9);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -23,7 +80,8 @@ h1 {
 }
 
 textarea {
-    width: 100%;
+    resize: none;
+    width: 580px;
     margin-bottom: 10px;
     padding: 10px;
     border: 1px solid #3498db;
