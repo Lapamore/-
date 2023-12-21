@@ -1,0 +1,86 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: -webkit-linear-gradient(140deg, #020232, #d26352); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(140deg, #020232, #d26352); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-family:"IBM Plex Sans", Arial, sans-serif;
+}
+
+.main {
+    margin-top: 100px;
+    max-width: 1920px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+.main__rectangle {
+    text-align: center;
+    background: #FFF;
+    box-shadow: 0px 2px 30px 0px rgba(21, 20, 53, 0.30);
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 40px;
+    border-radius: 5%;
+    background-color: #1b1b1bb7;
+    position: relative;
+    height: 400px;
+}
+
+.main__img {
+    margin-top: 15px;
+    margin-left: 25px;
+    margin-bottom: 15px;
+    width: 200px;
+    border-radius: 5%;
+}
+
+.main__title {
+    font-size: 20px;
+    color: white;
+}
+
+.line {
+    height: 2px;
+    width: 250px;
+    background-color: black;
+}
+
+.main__button {
+    top: 330px;
+    left: 85px;
+    position: absolute;
+    text-align: center;
+    text-decoration: none;
+    padding: 5px;
+    color: #000;
+    cursor: pointer;
+    border: 1px solid #5C6BC0;
+    color: white;
+    background-color: rgba(14, 8, 189, 0.6);
+}
+
+.main__button1 {
+    top: 280px;
+    left: 85px;
+    position: absolute;
+    text-align: center;
+    text-decoration: none;
+    padding: 5px;
+    color: #000;
+    cursor: pointer;
+    border: 1px solid #5C6BC0;
+    color: white;
+    background-color: rgba(238, 234, 7, 0.6);
+}
