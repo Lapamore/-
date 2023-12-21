@@ -1,7 +1,7 @@
    body, html {
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'IBM Plex Sans',sans-serif;
     scroll-behavior: smooth;
     color: white;
 }
@@ -14,7 +14,8 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 10px 20px;
+    padding-left: 10px;
+    padding-right: 10px;
     box-sizing: border-box;
     z-index: 1000;
 }
@@ -93,7 +94,6 @@
     background-color: #d3deed;
 }
 .sectionBlocks {
-    /* padding-top: 60px; Offset by header height */
     height: 100vh;
     display: flex;
     align-items: center;
@@ -110,11 +110,20 @@
     opacity: 0.8;
 }
 
+#courses {
+    height: 100vh;
+}
+
+#home {
+    height: 100vh;
+}
+
 #aboutus {
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 150px;
+    /* padding-top: 150px; */
 }
 
 #aboutus .title-prefix {
@@ -181,7 +190,7 @@
 
 .section#quotes {
     background-color: #030A1D;
-    height: 60vh;
+    height: 100vh;
 }
 
 
@@ -194,7 +203,6 @@
     overflow: hidden;
     transition: all 0.3s;
     cursor: pointer;
-    /* Общие стили для блоков остаются без изменений */
 }
 
 .block1 {
@@ -217,19 +225,24 @@
 
 .block .details {
     position: absolute;
+    bottom: 0;
+    left: 0;
     width: 100%;
-    height: 100%;
-    top: 100%; /* Hide details initially */
-    background: rgba(0, 0, 0, 0.7);
-    transition: top 0.3s;
+    height: 20%;
+    background-color: rgba(0, 0, 0, 0.7);
     padding: 20px;
-    box-sizing: border-box;
+    font-size: 24px;
     color: white;
-    font-size: 28px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .block:hover .details {
-    top: 0;
+    opacity: 1;
 }
 
 @media (max-width: 768px) {
@@ -238,11 +251,8 @@
     }
 }
 
-.sposobnosti {
-    margin-top: 70px;
-    font-size: 40px;
-    color: #000;
-    text-align: center;
+.widget_wrapper {
+    margin-top: 120px;
 }
 
 .section h1, .section h2 {
@@ -263,9 +273,13 @@ footer {
   
 #quoteText {
     color: white; /* Установите цвет текста на черный */
-    font-size: 2.5em; /* Увеличьте размер шрифта */
+    font-size: 6em; /* Увеличьте размер шрифта */
     opacity: 0; /* start with quote invisible */
     transition: opacity 2s; /* smooth transition for the opacity */
+}
+
+#course {
+    height: 100vh;
 }
 
 #home p {
@@ -275,6 +289,7 @@ footer {
 }
 
 #widgets {
+    height: 100vh;
     background-color: #030A1D; /* Тёмно-синий цвет фона для секции виджетов */
     color: black; /* Белый цвет текста для хорошего контраста */
     padding: 20px;

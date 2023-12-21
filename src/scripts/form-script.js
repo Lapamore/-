@@ -1,3 +1,16 @@
+function changeLinkDirection(newHref) {
+    // Получаем элемент ссылки по идентификатору
+    const linkElement = document.getElementById('area');
+  
+    // Проверяем, что элемент найден
+    if (linkElement) {
+      // Изменяем направление ссылки (атрибут href)
+      linkElement.href = newHref;
+    } else {
+      console.error('Элемент ссылки не найден.');
+    }
+  }
+
 function togglePasswordVisibility() {
     var passwordInput = document.getElementById("password");
     var eyeIcon = document.querySelector(".eye-icon");
@@ -125,12 +138,15 @@ function register() {
     } 
     saveUserToLocalStorage(name,surname,age,gender,email,password);
 
+    var retrievedUser=getUserFromLocalStorage;
+
     if (retrievedUser) {
         console.log('Данные о пользователе:', retrievedUser);
     } else {
         console.log('Данных о пользователе нет в Local Storage');
     }
-    window.location.href = 'cabinet.html'; 
+    changeLinkDirection('area.html');
+    window.location.href = 'area.html'; 
 }
 
 function clearValidationErrors() {

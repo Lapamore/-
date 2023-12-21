@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Motivatry</title>
-    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="../styles/main-style.css" />
   </head>
   <body>
     <div class="header">
-      <a class="logo" href="main.html">
+      <a class="logo" href="../templates/main.html">
         <img src="../images/motivation.png" alt="Logo" />
         <p class="title">Motivatry</p>
       </a>
@@ -18,7 +21,7 @@
         <a href="#courses">Возможности</a>
         <a href="#widgets">Виджеты</a>
         <a href="#quotes">Мотивация</a>
-        <a href="form.html">Личный кабинет</a>
+        <a id="area" href="form.html">Личный кабинет</a>
       </nav>
     </div>
     <div id="home" class="section">
@@ -37,7 +40,7 @@
         предлагаем различные инструменты и аналитику, основанную на ваших личных
         данных, чтобы вы могли глубже понять себя и свое внутреннее состояние
       </p>
-      <a href="form.html" class="start">Начать</a>
+      <a href="../templates/form.html" class="start">Начать</a>
     </div>
 
     <div id="courses" class="opportunities">
@@ -64,33 +67,32 @@
     </div>
 
     <div id="widgets" class="widgets-section">
-      <div class="widget" id="todoWidget">
-        <h3>Список дел</h3>
-        <p>Управляйте своими задачами эффективно</p>
-        <a href="../todo/index.html" class="widget-button">Перейти к списку дел</a>
-      </div>
-      <div class="widget" id="notesWidget">
-        <h3>Заметки</h3>
-        <p>Сохраняйте свои мысли и идеи в одном месте</p>
-        <a href="../note/index.html" class="widget-button">Перейти к заметкам</a>
-      </div>
-      <div class="widget" id="notesWidget">
-        <h3>Музыка</h3>
-        <p>Проникнитесь в дело под спокойный плейлист</p>
-        <a href="https://music.yandex.ru/users/Lostghost23/playlists/1004" class="widget-button">Слушать</a>
+      <div class="widget_wrapper">
+        <div class="widget" id="todoWidget">
+          <h3>Список дел</h3>
+          <p>Управляйте своими задачами эффективно</p>
+          <a href="../templates/todo.html" class="widget-button">Перейти к списку дел</a>
+        </div>
+        <div class="widget" id="notesWidget">
+          <h3>Заметки</h3>
+          <p>Сохраняйте свои мысли и идеи в одном месте</p>
+          <a href="../templates/note.html" class="widget-button">Перейти к заметкам</a>
+        </div>
+        <div class="widget" id="notesWidget">
+          <h3>Музыка</h3>
+          <p>Проникнитесь в дело под спокойный плейлист</p>
+          <a href="https://music.yandex.ru/users/Lostghost23/playlists/1004" class="widget-button">Слушать</a>
+        </div>
       </div>
   </div>
-     
-
     <div id="quotes" class="section">
       <p id="quoteText"></p>
-      <!-- Placeholder for quotes -->
     </div>
 
     <footer>
       <p>2023 Motivatry. Все права защищены.</p>
     </footer>
 
-    <script src="../scripts/scripts.js"></script>
+    <script src="../scripts/main-script.js"></script>
   </body>
 </html>
