@@ -137,7 +137,7 @@ function register() {
     if (c > 0) {
         return;
     } 
-    saveUserToLocalStorage(name,surname,gender,email,password);
+    saveUserToLocalStorage(name,surname,email,gender,password);
 
     var retrievedUser=getUserFromLocalStorage;
 
@@ -170,8 +170,8 @@ function clearValidationError(elementId) {
 
 
 // Сохранение данных о пользователе в Local Storage
-function saveUserToLocalStorage(name,surname,age,gender,email,password) {
-    const userData = { name,surname,age,gender,email,password };
+function saveUserToLocalStorage(name,surname,email,gender) {
+    const userData = { name,surname,email,gender};
     const userDataString = JSON.stringify(userData);
     localStorage.setItem('userData', userDataString);
   }

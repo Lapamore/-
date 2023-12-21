@@ -6,6 +6,9 @@
 }
 
 .main {
+    height: 100vh;
+    background: -webkit-linear-gradient(140deg, #020232, #d26352); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(140deg, #020232, #d26352); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     margin-top: 60px;
     display: flex;
     flex-direction: column;
@@ -70,7 +73,8 @@
     border: solid white;
 }
 
-.wrapper {    
+.wrapper {
+    border-radius: 10px;    
     display: flex;
     flex-direction: column;
     justify-content: center;
